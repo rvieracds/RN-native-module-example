@@ -21,30 +21,30 @@ import {
 import ToastLibraryRviera from 'react-native-toast-library-rviera';
 
 export default class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {text: 'NATIVE MODULE INTEGRATED!'};
   }
   render() {
-
-    console.log('ToastLibraryRviera ', ToastLibraryRviera)
+    console.log('ToastLibraryRviera ', ToastLibraryRviera);
 
     return (
       <View style={styles.container}>
         <Text>Please enter text</Text>
         <TextInput
-          style={{margin:10}}
+          style={{margin: 10}}
           multiline={true}
           placeholder="Type text to display in toast"
-          onChangeText={(text) => this.setState({text})}
+          onChangeText={text => this.setState({text})}
         />
         <Button
-          onPress={() => {ToastLibraryRviera.show(this.state.text)}}
+          onPress={() => {
+            ToastLibraryRviera.show(this.state.text);
+          }}
           title="Show Toast"
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
-/>
+        />
       </View>
     );
   }
